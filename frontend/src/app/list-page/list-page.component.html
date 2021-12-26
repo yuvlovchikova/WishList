@@ -1,0 +1,18 @@
+<div *ngIf="list" class="desire-wrap">
+  <p class="desire-title">{{list.list_name}}</p>
+  <div *ngFor="let desire of desiresArray" class="desire-item-wrap">
+    <svg width="8" height="8">
+      <use xlink:href="assets/point.svg#point"></use>
+    </svg>
+    <span class="desire-description">{{desire.desire_description}}</span>
+    <button *ngIf="(isLogged$ | async) && list.user_id !== userId"
+            class="desire-book-icon"
+            [class.disabled]="desire.desire_selected_by"
+            [class.unchangeable]="desire.desire_selected_by && desire.desire_selected_by !== userId"
+            (click)="bookDesire(desire, $event)">
+      <svg width="24" height="24">
+        <use xlink:href="assets/book.svg#book"></use>
+      </svg>
+    </button>
+  </div>
+</div>

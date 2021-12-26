@@ -1,0 +1,14 @@
+<h1 class="header-title" routerLink='../'>Wish list</h1>
+<div>
+  <button *ngIf="!(isLogged$ | async)" class="header-button-wrap" (click)="openLoginModal()">
+    <span class="header-button-text">Вход</span>
+  </button>
+  <div *ngIf="isLogged$ | async">
+    <button class="header-button-wrap" (click)="openListDialog()">
+      <span class="header-button-text">Создать лист</span>
+    </button>
+    <button class="header-button-wrap" (click)="logOut()">
+      <span class="header-button-text">Выход</span>
+    </button>
+  </div>
+</div>

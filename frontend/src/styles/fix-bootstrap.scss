@@ -1,0 +1,52 @@
+@import "~@fontsource/comfortaa/300.css";
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Comfortaa" !important;
+  background-color: #76656aa1;
+  background-image: url("../assets/background.png");
+  background-repeat: no-repeat;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  background-position-y: 120%;
+}
+
+h1, p {
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px 0;
+  position: relative;
+  color: white;
+}
+
+.desire-wrap {
+  width: 30%;
+  height: 80%;
+  background: rgba(165, 156, 158, 0.82);
+  padding: 32px 60px 200px 60px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 1000px 1px #c4c2c2;
+}
+
+.desire-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.desire-item-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.desire-description {
+  font-size: 20px;
+  margin: 6px 16px
+}
+
+.desire-book-icon {
+  margin-top: -4px;
+  opacity: 0.9;
+
+  &.disabled {
+    opacity: 0.4;
+  }
+
+  &.unchangeable {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}

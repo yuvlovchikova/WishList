@@ -1,0 +1,6 @@
+<div *ngIf="isLogged$ | async" class="lists-wrap">
+  <p class="lists-title">Ваши листы желаний</p>
+  <button *ngFor="let list of lists" class="list-preview" (click)="openList(list.list_id)">
+    <span>{{list.list_name}}</span>
+  </button>
+</div>

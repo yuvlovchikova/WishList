@@ -1,0 +1,32 @@
+<button class="create-list-close-icon" (click)="closeDialog()">
+  <svg width="14" height="14">
+    <use xlink:href="assets/cross.svg#cross"></use>
+  </svg>
+</button>
+
+<div class="create-list-wrap">
+  <p class="create-list-subtitle">Введите название листа желаний</p>
+  <input [formControl]="nameControl" class="create-list-input">
+  <div *ngFor="let desire of desires" class="create-list-desire-wrap">
+    <p class="create-list-desire">{{desire}}</p>
+    <button class="create-list-icon" (click)="deleteDesire(desire)">
+      <svg width="16" height="14">
+        <use xlink:href="assets/cross.svg#cross"></use>
+      </svg>
+    </button>
+  </div>
+  <div class="create-list-block">
+    <p class="create-list-subtitle">Введите желание</p>
+    <input [formControl]="desireControl" class="create-list-input">
+    <button class="create-list-icon" [disabled]="!desireControl.value" (click)="addDesire()">
+      <svg width="14" height="18">
+        <use xlink:href="assets/check.svg#check"></use>
+      </svg>
+    </button>
+  </div>
+  <button class="create-list-button"
+          (click)="sendList()"
+          [disabled]="!nameControl.value || desires.length === 0">
+      <span>Отправить</span>
+  </button>
+</div>
